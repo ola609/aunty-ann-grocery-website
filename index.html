@@ -9,21 +9,9 @@
 
 <style>
 *{
+  box-sizing:border-box;
   margin:0;
   padding:0;
-  box-sizing:border-box;
-}
-
-:root{
-  --green:#087443;
-  --dark:#073b2b;
-  --gold:#f5b82e;
-  --cream:#fffaf0;
-  --orange:#e86f2d;
-  --text:#17231e;
-  --muted:#68736e;
-  --white:#fff;
-  --border:#e9e4d9;
 }
 
 html{
@@ -32,8 +20,8 @@ html{
 
 body{
   font-family:Arial,Helvetica,sans-serif;
-  background:var(--cream);
-  color:var(--text);
+  background:#f7f4ec;
+  color:#18231e;
 }
 
 a{
@@ -46,74 +34,60 @@ a{
   margin:auto;
 }
 
-/* TOP BAR */
-
-.topbar{
-  background:var(--dark);
-  color:white;
-  padding:9px 0;
-  font-size:13px;
-}
-
-.topbar-inner{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
 /* HEADER */
 
 header{
-  background:white;
+  background:#fff;
+  border-bottom:1px solid #e9e4d8;
   position:sticky;
   top:0;
   z-index:1000;
-  border-bottom:1px solid var(--border);
 }
 
 .nav{
-  min-height:78px;
+  min-height:82px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
 }
 
-.logo{
+.brand{
   display:flex;
   align-items:center;
   gap:12px;
 }
 
-.logo-circle{
+.brand-logo{
   width:50px;
   height:50px;
-  border-radius:50%;
-  background:var(--green);
-  color:white;
+  border-radius:15px;
+  background:#086b43;
+  color:#fff;
   display:grid;
   place-items:center;
   font-weight:900;
+  font-size:17px;
+}
+
+.brand-name{
+  font-weight:900;
+  color:#073c29;
   font-size:18px;
 }
 
-.logo strong{
+.brand-sub{
   display:block;
-  color:var(--dark);
-  font-size:18px;
-}
-
-.logo span{
-  display:block;
-  font-size:10px;
-  color:var(--muted);
+  color:#777;
+  font-size:9px;
+  letter-spacing:1.4px;
   text-transform:uppercase;
-  letter-spacing:1px;
+  margin-top:3px;
 }
 
 nav{
   display:flex;
-  gap:26px;
   align-items:center;
+  gap:27px;
 }
 
 nav a{
@@ -122,460 +96,478 @@ nav a{
 }
 
 nav a:hover{
-  color:var(--green);
+  color:#086b43;
 }
 
-.nav-button{
-  background:var(--green);
+.contact-btn{
+  background:#086b43;
   color:white;
-  padding:12px 20px;
-  border-radius:30px;
+  padding:12px 19px;
+  border-radius:25px;
 }
 
 .menu{
   display:none;
-  font-size:28px;
   border:0;
   background:none;
+  font-size:27px;
 }
 
-/* HERO */
+/* INTRO */
 
-.hero{
-  padding:45px 0 35px;
+.intro{
+  padding:70px 0 35px;
 }
 
-.hero-box{
-  min-height:520px;
-  border-radius:30px;
-  overflow:hidden;
-  display:flex;
+.intro-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:45px;
   align-items:center;
-  background:
-    linear-gradient(90deg,rgba(4,52,37,.97),rgba(4,52,37,.82),rgba(4,52,37,.15)),
-    url("https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1800&q=85")
-    center/cover;
 }
 
-.hero-content{
-  width:650px;
-  padding:65px;
-  color:white;
-}
-
-.hero-label{
-  color:var(--gold);
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:2px;
+.kicker{
+  color:#d87920;
   font-size:12px;
-  margin-bottom:15px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
 }
 
-.hero h1{
-  font-size:clamp(42px,6vw,72px);
-  line-height:1;
-  margin-bottom:20px;
+.intro h1{
+  color:#073c29;
+  font-size:clamp(44px,6vw,70px);
+  line-height:.98;
+  margin:15px 0 22px;
 }
 
-.hero h1 span{
-  color:var(--gold);
+.intro h1 span{
+  color:#d87920;
 }
 
-.hero p{
-  font-size:18px;
-  color:rgba(255,255,255,.85);
-  margin-bottom:30px;
+.intro p{
+  color:#66716b;
   max-width:570px;
+  line-height:1.8;
+  font-size:17px;
 }
 
-.hero-buttons{
+.intro-buttons{
   display:flex;
   gap:12px;
+  margin-top:28px;
   flex-wrap:wrap;
 }
 
-.button{
-  display:inline-block;
-  padding:14px 23px;
+.btn{
+  padding:14px 22px;
   border-radius:30px;
   font-weight:800;
+  display:inline-block;
 }
 
-.button-gold{
-  background:var(--gold);
-  color:#302508;
+.btn-green{
+  background:#086b43;
+  color:#fff;
 }
 
-.button-white{
-  border:1px solid rgba(255,255,255,.5);
+.btn-light{
+  background:#fff;
+  border:1px solid #ddd7ca;
+  color:#073c29;
+}
+
+/* COLLAGE */
+
+.collage{
+  height:520px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  grid-template-rows:1fr 1fr;
+  gap:14px;
+}
+
+.photo{
+  border-radius:25px;
+  background-position:center;
+  background-size:cover;
+  overflow:hidden;
+  position:relative;
+}
+
+.photo:first-child{
+  grid-row:1 / 3;
+}
+
+.photo:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(transparent 55%,rgba(0,0,0,.55));
+}
+
+.photo-label{
+  position:absolute;
+  z-index:2;
+  bottom:18px;
+  left:18px;
   color:white;
+  font-weight:900;
+  font-size:18px;
 }
 
-/* SECTION */
+.photo-main{
+  background-image:url("https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1000&q=85");
+}
 
-section{
+.photo-caps{
+  background-image:url("https://images.unsplash.com/photo-1514327605112-b887c0e61c0a?auto=format&fit=crop&w=900&q=85");
+}
+
+.photo-beauty{
+  background-image:url("https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=85");
+}
+
+/* CATEGORY SECTION */
+
+.category-section{
+  background:#fff;
   padding:75px 0;
 }
 
-.section-title{
-  margin-bottom:35px;
+.heading{
+  text-align:center;
+  margin-bottom:40px;
 }
 
-.section-title small{
-  color:var(--orange);
-  text-transform:uppercase;
-  letter-spacing:2px;
-  font-weight:900;
+.heading small{
+  color:#d87920;
   font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:900;
 }
 
-.section-title h2{
-  color:var(--dark);
-  font-size:40px;
-  margin:8px 0;
+.heading h2{
+  color:#073c29;
+  font-size:42px;
+  margin:9px 0;
 }
 
-.section-title p{
-  color:var(--muted);
+.heading p{
+  color:#69736e;
 }
 
-/* CATEGORY GRID */
-
-.categories{
-  background:white;
-}
+/* CATEGORY CARDS */
 
 .category-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:18px;
+  gap:17px;
 }
 
 .category{
-  height:230px;
+  background:#f7f4ec;
   border-radius:20px;
   overflow:hidden;
-  position:relative;
-  background-size:cover;
-  background-position:center;
-  transition:.3s;
+  border:1px solid #ebe5d9;
+  transition:.25s;
 }
 
 .category:hover{
   transform:translateY(-6px);
+  box-shadow:0 18px 35px rgba(0,0,0,.09);
 }
 
-.category:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(transparent 30%,rgba(0,0,0,.82));
+.category-image{
+  height:190px;
+  background-position:center;
+  background-size:cover;
 }
 
-.category-text{
-  position:absolute;
-  z-index:2;
-  bottom:20px;
-  left:20px;
-  color:white;
-}
-
-.category-text h3{
-  font-size:23px;
-}
-
-.category-text p{
-  font-size:12px;
-  opacity:.85;
-}
-
-/* CATEGORY IMAGES */
-
-.grocery{
- background-image:url("https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80");
-}
-
-.drinks{
- background-image:url("https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=800&q=80");
-}
-
-.clothes{
- background-image:url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=80");
-}
-
-.caps{
- background-image:url("https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=800&q=80");
-}
-
-.shoes{
- background-image:url("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80");
-}
-
-.spices{
- background-image:url("https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80");
-}
-
-.beauty{
- background-image:url("https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=80");
-}
-
-.hair{
- background-image:url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80");
-}
-
-/* PRODUCTS */
-
-.products{
-  background:var(--cream);
-}
-
-.product-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
-
-.product{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:18px;
-  overflow:hidden;
-  transition:.3s;
-}
-
-.product:hover{
-  transform:translateY(-5px);
-  box-shadow:0 15px 40px rgba(0,0,0,.09);
-}
-
-.product img{
-  height:220px;
-  width:100%;
-  object-fit:cover;
-}
-
-.product-info{
+.category-content{
   padding:18px;
 }
 
-.tag{
-  color:var(--orange);
-  font-size:10px;
-  text-transform:uppercase;
-  letter-spacing:1.5px;
-  font-weight:900;
+.category-content h3{
+  color:#073c29;
+  font-size:20px;
+  margin-bottom:5px;
 }
 
-.product h3{
-  margin:7px 0;
-}
-
-.product p{
-  color:var(--muted);
+.category-content p{
+  color:#707a75;
   font-size:13px;
+  line-height:1.5;
 }
 
-.ask{
-  display:inline-block;
-  margin-top:12px;
-  background:#edf7f1;
-  color:var(--green);
-  padding:6px 10px;
-  border-radius:20px;
-  font-size:11px;
-  font-weight:800;
+/* GROUPED CATEGORY IMAGES */
+
+.grocery{
+  background-image:url("https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=85");
 }
 
-/* WHY US */
-
-.why{
-  background:white;
+.drinks{
+  background-image:url("https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=85");
 }
 
-.why-grid{
+/* GROUP OF CLOTHES */
+
+.clothes{
+  background-image:url("https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=85");
+}
+
+/* GROUP OF CAPS / HATS */
+
+.caps{
+  background-image:url("https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=900&q=85");
+}
+
+.shoes{
+  background-image:url("https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=900&q=85");
+}
+
+.spices{
+  background-image:url("https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=900&q=85");
+}
+
+.beauty{
+  background-image:url("https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=85");
+}
+
+.hair{
+  background-image:url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=85");
+}
+
+/* FEATURED AREA */
+
+.featured{
+  padding:80px 0;
+  background:#f7f4ec;
+}
+
+.featured-layout{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+  grid-template-columns:.75fr 1.25fr;
+  gap:35px;
+  align-items:stretch;
 }
 
-.why-card{
-  padding:30px;
-  border:1px solid var(--border);
+.featured-intro{
+  background:#073c29;
+  border-radius:25px;
+  padding:38px;
+  color:#fff;
+}
+
+.featured-intro small{
+  color:#f5b82e;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+.featured-intro h2{
+  font-size:40px;
+  line-height:1.05;
+  margin:15px 0;
+}
+
+.featured-intro p{
+  color:rgba(255,255,255,.75);
+  line-height:1.7;
+}
+
+.featured-list{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:17px;
+}
+
+.item{
+  background:#fff;
   border-radius:20px;
+  overflow:hidden;
+  border:1px solid #e9e3d7;
 }
 
-.icon{
-  font-size:35px;
-  margin-bottom:15px;
+.item-img{
+  height:190px;
+  background-size:cover;
+  background-position:center;
 }
 
-.why-card h3{
-  color:var(--dark);
-  margin-bottom:8px;
+.item-content{
+  padding:17px;
 }
 
-.why-card p{
-  color:var(--muted);
-  font-size:14px;
+.item-content small{
+  color:#d87920;
+  font-size:10px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.item-content h3{
+  margin:7px 0;
+  color:#073c29;
+}
+
+.item-content p{
+  color:#717a76;
+  font-size:13px;
+  line-height:1.5;
+}
+
+.item-1{
+  background-image:url("https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80");
+}
+
+.item-2{
+  background-image:url("https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=800&q=80");
+}
+
+.item-3{
+  background-image:url("https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80");
+}
+
+.item-4{
+  background-image:url("https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=80");
 }
 
 /* ABOUT */
 
 .about{
-  background:var(--cream);
+  padding:80px 0;
+  background:#fff;
 }
 
 .about-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:55px;
+  gap:50px;
   align-items:center;
 }
 
-.about img{
-  height:480px;
-  width:100%;
-  object-fit:cover;
+.about-image{
+  min-height:450px;
   border-radius:25px;
+  background:
+    linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.15)),
+    url("https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1200&q=85")
+    center/cover;
 }
 
-.about h2{
-  color:var(--dark);
+.about-text h2{
+  color:#073c29;
   font-size:44px;
   line-height:1.05;
-  margin:10px 0 20px;
+  margin:12px 0 20px;
 }
 
-.about p{
-  color:var(--muted);
+.about-text p{
+  color:#68736f;
+  line-height:1.8;
   margin-bottom:15px;
 }
 
-/* CTA */
+/* CONTACT */
 
-.cta{
-  background:var(--green);
-  color:white;
+.contact{
+  padding:80px 0;
+  background:#f7f4ec;
 }
 
-.cta-box{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:30px;
-}
-
-.cta h2{
-  font-size:42px;
-}
-
-.cta p{
-  color:rgba(255,255,255,.8);
-  margin-top:8px;
-}
-
-/* VISIT */
-
-.visit{
-  background:white;
-}
-
-.visit-grid{
+.contact-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:25px;
+  gap:20px;
 }
 
-.card{
-  padding:32px;
-  border:1px solid var(--border);
-  border-radius:20px;
+.contact-card{
+  background:#fff;
+  padding:35px;
+  border-radius:22px;
+  border:1px solid #e9e3d7;
 }
 
-.card h3{
-  color:var(--dark);
+.contact-card h3{
+  color:#073c29;
   font-size:25px;
+  margin-bottom:22px;
+}
+
+.contact-line{
   margin-bottom:20px;
 }
 
-.info{
-  margin-bottom:20px;
-}
-
-.info strong{
+.contact-line strong{
   display:block;
-  color:var(--dark);
+  color:#073c29;
+  margin-bottom:5px;
 }
 
-.info span,
-.info a{
-  color:var(--muted);
+.contact-line span,
+.contact-line a{
+  color:#6c7771;
+  line-height:1.6;
   font-size:14px;
-}
-
-.map{
-  display:inline-block;
-  background:var(--green);
-  color:white;
-  padding:12px 18px;
-  border-radius:30px;
-  font-weight:800;
 }
 
 /* FOOTER */
 
 footer{
-  background:#062e22;
+  background:#062f22;
   color:white;
-  padding:55px 0 25px;
+  padding:50px 0 25px;
 }
 
 .footer-grid{
   display:grid;
-  grid-template-columns:1.5fr 1fr 1fr;
+  grid-template-columns:1.4fr 1fr 1fr;
   gap:40px;
   padding-bottom:35px;
   border-bottom:1px solid rgba(255,255,255,.12);
 }
 
 footer h3{
-  margin-bottom:15px;
+  margin-bottom:14px;
 }
 
 footer p,
 footer a{
   color:rgba(255,255,255,.65);
   font-size:14px;
+  line-height:1.7;
 }
 
 footer a{
   display:block;
-  margin-bottom:8px;
+  margin-bottom:7px;
 }
 
-.copyright{
+.copy{
   padding-top:20px;
-  color:rgba(255,255,255,.45);
+  color:rgba(255,255,255,.4);
   font-size:12px;
 }
 
-/* FLOAT CALL */
+/* FLOATING BUTTON */
 
 .call{
-  position:fixed;
-  right:20px;
-  bottom:20px;
   width:58px;
   height:58px;
   border-radius:50%;
-  background:var(--green);
+  background:#086b43;
   color:white;
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:999;
   display:grid;
   place-items:center;
   font-size:23px;
-  box-shadow:0 10px 30px rgba(0,0,0,.2);
-  z-index:999;
+  box-shadow:0 12px 30px rgba(0,0,0,.22);
 }
 
 /* MOBILE */
@@ -585,13 +577,13 @@ footer a{
   nav{
     display:none;
     position:absolute;
-    top:78px;
+    top:82px;
     left:0;
     right:0;
-    background:white;
-    padding:20px;
+    background:#fff;
+    padding:22px;
     flex-direction:column;
-    border-bottom:1px solid var(--border);
+    border-bottom:1px solid #e9e4d8;
   }
 
   nav.active{
@@ -602,19 +594,27 @@ footer a{
     display:block;
   }
 
-  .category-grid,
-  .product-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
+  .intro-grid,
   .about-grid,
-  .visit-grid{
+  .contact-grid,
+  .featured-layout{
     grid-template-columns:1fr;
   }
 
-  .cta-box{
-    flex-direction:column;
-    align-items:flex-start;
+  .category-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .intro{
+    padding-top:45px;
+  }
+
+  .collage{
+    height:430px;
+  }
+
+  .featured-list{
+    grid-template-columns:repeat(2,1fr);
   }
 
   .footer-grid{
@@ -624,51 +624,32 @@ footer a{
 
 @media(max-width:600px){
 
-  .topbar-inner{
-    justify-content:center;
-    text-align:center;
-  }
-
-  .hero-box{
-    min-height:600px;
-  }
-
-  .hero-content{
-    padding:35px;
-  }
-
-  .hero h1{
-    font-size:45px;
-  }
-
-  .hero p{
-    font-size:16px;
-  }
-
-  .category-grid,
-  .product-grid,
-  .why-grid{
+  .category-grid{
     grid-template-columns:1fr;
   }
 
-  .section-title h2{
-    font-size:33px;
-  }
-
-  .about h2{
-    font-size:36px;
-  }
-
-  .about img{
-    height:360px;
+  .featured-list{
+    grid-template-columns:1fr;
   }
 
   .footer-grid{
     grid-template-columns:1fr;
   }
 
-  .cta h2{
+  .intro h1{
+    font-size:46px;
+  }
+
+  .heading h2{
     font-size:34px;
+  }
+
+  .about-text h2{
+    font-size:36px;
+  }
+
+  .collage{
+    height:400px;
   }
 }
 </style>
@@ -676,25 +657,14 @@ footer a{
 
 <body>
 
-<!-- TOP BAR -->
-
-<div class="topbar">
-  <div class="container topbar-inner">
-    <span>🌍 African & Caribbean Grocery • Beauty Supply</span>
-    <span>📍 Kingston, Ontario</span>
-  </div>
-</div>
-
-<!-- HEADER -->
-
 <header>
   <div class="container nav">
 
-    <a href="#home" class="logo">
-      <div class="logo-circle">AA</div>
+    <a class="brand" href="#home">
+      <div class="brand-logo">AA</div>
       <div>
-        <strong>Aunty Ann</strong>
-        <span>Grocery & Beauty Supply</span>
+        <div class="brand-name">Aunty Ann</div>
+        <span class="brand-sub">Grocery & Beauty Supply</span>
       </div>
     </a>
 
@@ -702,125 +672,152 @@ footer a{
 
     <nav id="nav">
       <a href="#home">Home</a>
-      <a href="#categories">Categories</a>
-      <a href="#products">Featured</a>
+      <a href="#categories">Shop</a>
+      <a href="#featured">Featured</a>
       <a href="#about">About</a>
-      <a href="#visit">Visit Us</a>
-      <a class="nav-button" href="tel:+16138765553">Call Us</a>
+      <a href="#contact">Contact</a>
+      <a class="contact-btn" href="tel:+16138765553">Call Store</a>
     </nav>
 
   </div>
 </header>
 
-<!-- HERO -->
+<!-- INTRO -->
 
-<section class="hero" id="home">
-  <div class="container">
+<section class="intro" id="home">
 
-    <div class="hero-box">
+  <div class="container intro-grid">
 
-      <div class="hero-content">
+    <div>
 
-        <div class="hero-label">
-          Caribbean • African • Beauty
+      <div class="kicker">
+        African • Caribbean • Beauty
+      </div>
+
+      <h1>
+        More of what<br>
+        you <span>love.</span>
+      </h1>
+
+      <p>
+        Welcome to Aunty Ann Caribbean & African Grocery
+        and Beauty Supply. Explore food, drinks, fashion,
+        footwear, beauty products and more.
+      </p>
+
+      <div class="intro-buttons">
+        <a class="btn btn-green" href="#categories">
+          Explore Store
+        </a>
+
+        <a class="btn btn-light" href="#contact">
+          Visit Us
+        </a>
+      </div>
+
+    </div>
+
+    <div class="collage">
+
+      <div class="photo photo-main">
+        <div class="photo-label">
+          Grocery & Specialty Foods
         </div>
+      </div>
 
-        <h1>
-          Your culture.<br>
-          Your <span>favourites.</span>
-        </h1>
-
-        <p>
-          Discover groceries, drinks, spices, clothing, footwear,
-          beauty products and more — all in one place.
-        </p>
-
-        <div class="hero-buttons">
-          <a href="#categories" class="button button-gold">
-            Browse Categories
-          </a>
-
-          <a href="#visit" class="button button-white">
-            Find Our Store
-          </a>
+      <div class="photo photo-caps">
+        <div class="photo-label">
+          Fashion & Accessories
         </div>
+      </div>
 
+      <div class="photo photo-beauty">
+        <div class="photo-label">
+          Beauty Supply
+        </div>
       </div>
 
     </div>
 
   </div>
+
 </section>
 
 <!-- CATEGORIES -->
 
-<section class="categories" id="categories">
+<section class="category-section" id="categories">
 
   <div class="container">
 
-    <div class="section-title">
-      <small>Shop by category</small>
-      <h2>Everything organized in one place.</h2>
-      <p>
-        Explore the different types of products available at Aunty Ann.
-      </p>
+    <div class="heading">
+      <small>Browse the store</small>
+      <h2>Shop by category</h2>
+      <p>Everything arranged so customers can find what they need.</p>
     </div>
 
     <div class="category-grid">
 
-      <a href="#products" class="category grocery">
-        <div class="category-text">
-          <h3>🛒 Grocery</h3>
-          <p>African & Caribbean favourites</p>
+      <a class="category" href="#featured">
+        <div class="category-image grocery"></div>
+        <div class="category-content">
+          <h3>Groceries</h3>
+          <p>African & Caribbean food favourites.</p>
         </div>
       </a>
 
-      <a href="#products" class="category drinks">
-        <div class="category-text">
-          <h3>🥤 Drinks</h3>
-          <p>Canned & bottled drinks</p>
+      <a class="category" href="#featured">
+        <div class="category-image drinks"></div>
+        <div class="category-content">
+          <h3>Canned & Bottled Drinks</h3>
+          <p>Refreshing drinks and beverages.</p>
         </div>
       </a>
 
-      <a href="#products" class="category clothes">
-        <div class="category-text">
-          <h3>👕 Clothes</h3>
-          <p>Fashion & everyday wear</p>
+      <a class="category" href="#featured">
+        <div class="category-image clothes"></div>
+        <div class="category-content">
+          <h3>Clothing</h3>
+          <p>A selection of clothing and fashion.</p>
         </div>
       </a>
 
-      <a href="#products" class="category caps">
-        <div class="category-text">
-          <h3>🧢 Caps</h3>
-          <p>Styles for every look</p>
+      <a class="category" href="#featured">
+        <div class="category-image caps"></div>
+        <div class="category-content">
+          <h3>Caps & Hats</h3>
+          <p>A group of styles and accessories.</p>
         </div>
       </a>
 
-      <a href="#products" class="category shoes">
-        <div class="category-text">
-          <h3>👟 Shoes</h3>
-          <p>Footwear & everyday styles</p>
+      <a class="category" href="#featured">
+        <div class="category-image shoes"></div>
+        <div class="category-content">
+          <h3>Shoes</h3>
+          <p>Footwear for everyday styles.</p>
         </div>
       </a>
 
-      <a href="#products" class="category spices">
-        <div class="category-text">
-          <h3>🌶️ Spices</h3>
-          <p>Flavours for your kitchen</p>
+      <a class="category" href="#featured">
+        <div class="category-image spices"></div>
+        <div class="category-content">
+          <h3>Spices & Seasonings</h3>
+          <p>Flavours for your favourite meals.</p>
         </div>
       </a>
 
-      <a href="#products" class="category beauty">
-        <div class="category-text">
-          <h3>💄 Beauty</h3>
-          <p>Beauty & personal care</p>
+      <a class="category" href="#featured">
+        <div class="category-image beauty"></div>
+        <div class="category-content">
+          <h3>Beauty Products</h3>
+          <p>Beauty and personal-care essentials.</p>
         </div>
       </a>
 
-      <a href="#products" class="category hair">
-        <div class="category-text">
-          <h3>💇🏾 Braiding Hair</h3>
-          <p>Hair & styling essentials</p>
+      <a class="category" href="#featured">
+        <div class="category-image hair"></div>
+        <div class="category-content">
+          <h3>Braiding Hair</h3>
+          <p>Hair and styling essentials.</p>
         </div>
       </a>
 
@@ -832,138 +829,68 @@ footer a{
 
 <!-- FEATURED -->
 
-<section class="products" id="products">
+<section class="featured" id="featured">
 
-  <div class="container">
+  <div class="container featured-layout">
 
-    <div class="section-title">
-      <small>Featured selection</small>
-      <h2>Popular product categories.</h2>
+    <div class="featured-intro">
+
+      <small>STORE HIGHLIGHTS</small>
+
+      <h2>
+        Something for your kitchen, wardrobe & beauty routine.
+      </h2>
+
       <p>
-        A visual preview for the store website. Exact inventory and
-        pricing should be confirmed with the business.
+        Browse a visual preview of the types of products
+        customers can discover at Aunty Ann.
       </p>
+
+      <a href="tel:+16138765553"
+         class="btn"
+         style="background:#f5b82e;color:#302508;margin-top:25px;">
+        Ask About Availability
+      </a>
+
     </div>
 
-    <div class="product-grid">
+    <div class="featured-list">
 
-      <article class="product">
-
-        <img
-          src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=900&q=80"
-          alt="African and Caribbean spices"
-        >
-
-        <div class="product-info">
-          <span class="tag">Grocery</span>
-          <h3>Spices & Seasonings</h3>
-          <p>
-            Bring rich flavour and familiar tastes to your kitchen.
-          </p>
-          <span class="ask">Ask in store</span>
+      <article class="item">
+        <div class="item-img item-1"></div>
+        <div class="item-content">
+          <small>Grocery</small>
+          <h3>Pantry Favourites</h3>
+          <p>Specialty foods and everyday grocery essentials.</p>
         </div>
-
       </article>
 
-      <article class="product">
-
-        <img
-          src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80"
-          alt="Canned and bottled drinks"
-        >
-
-        <div class="product-info">
-          <span class="tag">Drinks</span>
-          <h3>Canned & Bottled Drinks</h3>
-          <p>
-            A colourful selection of refreshing drink options.
-          </p>
-          <span class="ask">Ask in store</span>
+      <article class="item">
+        <div class="item-img item-2"></div>
+        <div class="item-content">
+          <small>Footwear</small>
+          <h3>Shoes & Styles</h3>
+          <p>Explore footwear selections in store.</p>
         </div>
-
       </article>
 
-      <article class="product">
-
-        <img
-          src="https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=900&q=80"
-          alt="Caps"
-        >
-
-        <div class="product-info">
-          <span class="tag">Fashion</span>
-          <h3>Caps & Accessories</h3>
-          <p>
-            Complete your everyday look with stylish accessories.
-          </p>
-          <span class="ask">Ask in store</span>
+      <article class="item">
+        <div class="item-img item-3"></div>
+        <div class="item-content">
+          <small>Fashion</small>
+          <h3>Clothing</h3>
+          <p>Fashion pieces and everyday clothing options.</p>
         </div>
-
       </article>
 
-      <article class="product">
-
-        <img
-          src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=80"
-          alt="Beauty products"
-        >
-
-        <div class="product-info">
-          <span class="tag">Beauty</span>
+      <article class="item">
+        <div class="item-img item-4"></div>
+        <div class="item-content">
+          <small>Beauty</small>
           <h3>Beauty Essentials</h3>
-          <p>
-            Beauty and personal-care products for your routine.
-          </p>
-          <span class="ask">Ask in store</span>
+          <p>Products for hair, skin and everyday beauty care.</p>
         </div>
-
       </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- WHY -->
-
-<section class="why">
-
-  <div class="container">
-
-    <div class="section-title">
-      <small>Why shop with us</small>
-      <h2>A store made for the community.</h2>
-    </div>
-
-    <div class="why-grid">
-
-      <div class="why-card">
-        <div class="icon">🌍</div>
-        <h3>African & Caribbean Selection</h3>
-        <p>
-          Discover specialty foods and products connected to
-          African and Caribbean culture.
-        </p>
-      </div>
-
-      <div class="why-card">
-        <div class="icon">🛍️</div>
-        <h3>More Than Groceries</h3>
-        <p>
-          Explore grocery, beauty, fashion and other useful
-          product categories in one place.
-        </p>
-      </div>
-
-      <div class="why-card">
-        <div class="icon">❤️</div>
-        <h3>Made for Everyday Life</h3>
-        <p>
-          Find familiar ingredients, beauty essentials and
-          products for everyday needs.
-        </p>
-      </div>
 
     </div>
 
@@ -975,67 +902,32 @@ footer a{
 
 <section class="about" id="about">
 
-  <div class="container">
+  <div class="container about-grid">
 
-    <div class="about-grid">
+    <div class="about-image"></div>
 
-      <img
-        src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1200&q=85"
-        alt="Grocery store"
-      >
+    <div class="about-text">
 
-      <div>
+      <div class="kicker">About Aunty Ann</div>
 
-        <small style="color:#e86f2d;font-weight:900;text-transform:uppercase;letter-spacing:2px;">
-          About Aunty Ann
-        </small>
+      <h2>
+        A convenient place for products you know and love.
+      </h2>
 
-        <h2>
-          A place to find the flavours and products you love.
-        </h2>
+      <p>
+        Aunty Ann Caribbean / African Grocery & Beauty Supply
+        serves the Kingston, Ontario community with specialty
+        grocery and beauty products.
+      </p>
 
-        <p>
-          Aunty Ann Caribbean / African Grocery & Beauty Supply
-          serves customers in Kingston, Ontario with specialty
-          grocery and beauty products.
-        </p>
+      <p>
+        The website is designed to make the store easier to
+        discover online while keeping the shopping experience
+        simple and organized.
+      </p>
 
-        <p>
-          This website concept brings the different product
-          categories together in a cleaner and easier-to-browse
-          online experience.
-        </p>
-
-        <a href="#visit" class="button" style="background:#087443;color:white;margin-top:12px;">
-          Visit the Store
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- CTA -->
-
-<section class="cta">
-
-  <div class="container">
-
-    <div class="cta-box">
-
-      <div>
-        <h2>Looking for something?</h2>
-        <p>
-          Contact the store and ask about availability.
-        </p>
-      </div>
-
-      <a href="tel:+16138765553"
-         class="button button-gold">
-        Call 613-876-5553
+      <a class="btn btn-green" href="#contact">
+        Store Information
       </a>
 
     </div>
@@ -1044,24 +936,25 @@ footer a{
 
 </section>
 
-<!-- VISIT -->
+<!-- CONTACT -->
 
-<section class="visit" id="visit">
+<section class="contact" id="contact">
 
   <div class="container">
 
-    <div class="section-title">
-      <small>Visit us</small>
-      <h2>Come see us in Kingston.</h2>
+    <div class="heading">
+      <small>Come visit</small>
+      <h2>Find Aunty Ann</h2>
+      <p>Contact the store for current product availability.</p>
     </div>
 
-    <div class="visit-grid">
+    <div class="contact-grid">
 
-      <div class="card">
+      <div class="contact-card">
 
-        <h3>Store Information</h3>
+        <h3>Store Details</h3>
 
-        <div class="info">
+        <div class="contact-line">
           <strong>📍 Address</strong>
           <span>
             846 Gardiners Rd<br>
@@ -1069,7 +962,7 @@ footer a{
           </span>
         </div>
 
-        <div class="info">
+        <div class="contact-line">
           <strong>📞 Phone</strong>
           <a href="tel:+16138765553">
             (613) 876-5553
@@ -1077,29 +970,30 @@ footer a{
         </div>
 
         <a
-          class="map"
+          class="btn btn-green"
           target="_blank"
           href="https://www.google.com/maps/search/?api=1&query=846+Gardiners+Rd+Kingston+ON"
         >
-          Get Directions →
+          Get Directions
         </a>
 
       </div>
 
-      <div class="card">
+      <div class="contact-card">
 
-        <h3>Before You Visit</h3>
+        <h3>Looking for something?</h3>
 
-        <p style="color:#68736e;line-height:1.8;">
-          Product availability and prices can change.
-          For a specific item, contact the store directly
-          before making a trip.
+        <p style="color:#69736f;line-height:1.8;">
+          Product selection and availability can change.
+          If you are looking for a specific grocery item,
+          drink, clothing item, shoe, cap, beauty product
+          or braiding hair, contact the store first.
         </p>
 
         <a
+          class="btn"
           href="tel:+16138765553"
-          class="button"
-          style="background:#f5b82e;color:#302508;margin-top:20px;"
+          style="background:#f5b82e;color:#302508;margin-top:22px;"
         >
           Call the Store
         </a>
@@ -1121,40 +1015,48 @@ footer a{
     <div class="footer-grid">
 
       <div>
-        <div class="logo">
-          <div class="logo-circle">AA</div>
+
+        <div class="brand">
+
+          <div class="brand-logo">AA</div>
+
           <div>
-            <strong style="color:white;">Aunty Ann</strong>
-            <span style="color:rgba(255,255,255,.55);">
+            <div class="brand-name" style="color:#fff;">
+              Aunty Ann
+            </div>
+
+            <span class="brand-sub" style="color:rgba(255,255,255,.5);">
               Grocery & Beauty Supply
             </span>
           </div>
+
         </div>
 
         <p style="margin-top:18px;">
-          Caribbean & African grocery, beauty and specialty
+          African & Caribbean grocery, beauty and specialty
           products in Kingston, Ontario.
         </p>
+
       </div>
 
       <div>
         <h3>Explore</h3>
+        <a href="#home">Home</a>
         <a href="#categories">Categories</a>
-        <a href="#products">Featured</a>
+        <a href="#featured">Featured</a>
         <a href="#about">About</a>
-        <a href="#visit">Visit Us</a>
       </div>
 
       <div>
         <h3>Contact</h3>
         <a href="tel:+16138765553">(613) 876-5553</a>
-        <a href="#visit">846 Gardiners Rd</a>
-        <a href="#visit">Kingston, Ontario</a>
+        <a href="#contact">846 Gardiners Rd</a>
+        <a href="#contact">Kingston, Ontario</a>
       </div>
 
     </div>
 
-    <div class="copyright">
+    <div class="copy">
       © 2026 Aunty Ann Caribbean & African Grocery & Beauty Supply
     </div>
 
@@ -1162,18 +1064,14 @@ footer a{
 
 </footer>
 
-<!-- FLOATING CALL -->
-
-<a class="call" href="tel:+16138765553">
-  ☎
-</a>
+<a class="call" href="tel:+16138765553">☎</a>
 
 <script>
 
 const menu = document.getElementById("menu");
 const nav = document.getElementById("nav");
 
-menu.addEventListener("click", function(){
+menu.addEventListener("click",function(){
   nav.classList.toggle("active");
 });
 
